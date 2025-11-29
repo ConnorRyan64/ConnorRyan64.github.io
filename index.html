@@ -14,17 +14,161 @@
         display: block;
         margin-top: 12px;
       }
+
+      /* Dropdown + tabs */
+      .dropdown-toggle {
+        margin-top: 24px;
+        padding: 8px 14px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        background: #f5f5f5;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .dropdown {
+        margin-top: 12px;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        background: #fafafa;
+        max-width: 640px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .tab-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .tab-button {
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid #ccc;
+        background: #fff;
+        cursor: pointer;
+        font-size: 13px;
+      }
+
+      .tab-button.active {
+        background: #0055aa;
+        color: #fff;
+        border-color: #004080;
+      }
+
+      .tab-panel {
+        display: none;
+        font-size: 14px;
+      }
+
+      .tab-panel.active {
+        display: block;
+      }
+
+      .tab-panel h2 {
+        margin-top: 0;
+        font-size: 18px;
+      }
     </style>
   </head>
   <body>
     <h1>A Basic Webpage</h1>
     <p>
-      I am a student at
-      <a href="https://connorryan64.github.io/" target="_blank" rel="noopener noreferrer">
-        ConnorRyan64.github.io
-      </a>,
-      home of the Nittany Lions. This is our new logo.
+      I am a Senior Computer Engineering Undergrad at Penn State University,
+      home of the Nittany Lions.
     </p>
-    <img src="https://miro.medium.com/v2/resize:fit:1200/1*k5aOhvY5U-C23BLYwDGmRg.jpeg" alt="Penn State style logo">
+
+    <!-- Dropdown + tabs for assignment categories -->
+    <button class="dropdown-toggle" onclick="toggleDropdown()">
+      Assignment Categories ▾
+    </button>
+
+    <div id="assignment-dropdown" class="dropdown hidden">
+      <div class="tab-list">
+        <button class="tab-button active" data-target="tab-ungraded">Ungraded Assignments</button>
+        <button class="tab-button" data-target="tab-discussions">Discussions</button>
+        <button class="tab-button" data-target="tab-individual">Individual Assignments</button>
+        <button class="tab-button" data-target="tab-projects">Individual Projects</button>
+        <button class="tab-button" data-target="tab-portfolio">Final Project: Learning Portfolio</button>
+        <button class="tab-button" data-target="tab-quizzes">Quizzes</button>
+        <button class="tab-button" data-target="tab-reading">Reading Checks (zyBook)</button>
+      </div>
+
+      <div class="tab-content">
+        <div id="tab-ungraded" class="tab-panel active">
+          <h2>Ungraded Assignments</h2>
+          <p>List all ungraded or zero-point assignments in this category here.</p>
+        </div>
+
+        <div id="tab-discussions" class="tab-panel">
+          <h2>Discussions</h2>
+          <p>All graded discussion posts (submit early and comment) go in this category.</p>
+        </div>
+
+        <div id="tab-individual" class="tab-panel">
+          <h2>Individual Assignments</h2>
+          <p>Use this category for single-student assignments such as exit tickets, activities, and small tasks.</p>
+        </div>
+
+        <div id="tab-projects" class="tab-panel">
+          <h2>Individual Projects</h2>
+          <p>Place larger standalone projects (Treasure Hunt, OSINT, Security infographic, etc.) here.</p>
+        </div>
+
+        <div id="tab-portfolio" class="tab-panel">
+          <h2>Final Project: Learning Portfolio</h2>
+          <p>Milestones and final portfolio submission belong in this category.</p>
+        </div>
+
+        <div id="tab-quizzes" class="tab-panel">
+          <h2>Quizzes</h2>
+          <p>All weekly quizzes (L01–L13) are grouped under this category.</p>
+        </div>
+
+        <div id="tab-reading" class="tab-panel">
+          <h2>Reading Checks (zyBook)</h2>
+          <p>Reading check assignments tied to zyBook chapters go here.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleDropdown() {
+        const dropdown = document.getElementById('assignment-dropdown');
+        dropdown.classList.toggle('hidden');
+      }
+
+      // Tab switching logic
+      document.addEventListener('DOMContentLoaded', function () {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabButtons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            const targetId = this.getAttribute('data-target');
+
+            // Deactivate all buttons and panels
+            tabButtons.forEach(function (btn) {
+              btn.classList.remove('active');
+            });
+            tabPanels.forEach(function (panel) {
+              panel.classList.remove('active');
+            });
+
+            // Activate clicked button and corresponding panel
+            this.classList.add('active');
+            const targetPanel = document.getElementById(targetId);
+            if (targetPanel) {
+              targetPanel.classList.add('active');
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
