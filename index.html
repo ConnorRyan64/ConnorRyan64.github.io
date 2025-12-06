@@ -381,6 +381,28 @@
         display: inline-block;
       }
 
+      /* Assignment media (screenshots and examples) */
+
+      .assignment-media {
+        margin: 6px 0;
+      }
+
+      .assignment-media figure {
+        margin: 0;
+      }
+
+      .assignment-media img {
+        max-width: 100%;
+        border-radius: 6px;
+        display: block;
+      }
+
+      .assignment-media figcaption {
+        font-size: 11px;
+        color: #6b7280;
+        margin-top: 2px;
+      }
+
       /* Skills */
 
       .skills-grid {
@@ -456,6 +478,7 @@
           <a href="#portfolio">Portfolio</a>
           <a href="#skills">Skills</a>
           <a href="#about">About</a>
+          <a href="#conclusion">Conclusion</a>
         </nav>
       </div>
     </header>
@@ -465,12 +488,17 @@
       <section id="home">
         <div class="hero">
           <div class="hero-main">
-            <h1>Student Learning Portfolio</h1>
+            <h1>Introduction &amp; Brief Bio</h1>
             <p>
               <!-- Brief bio goes here -->
               This space will hold a short introduction and brief bio summarizing who you are, your major,
               and what this portfolio represents.
             </p>
+            <ul class="small">
+              <li>Major and year (e.g., Computer Engineering, Junior).</li>
+              <li>Course and semester (e.g., IST 110 – Fall 20XX).</li>
+              <li>Purpose of this portfolio and your overall goals.</li>
+            </ul>
             <p class="hero-tagline">
               You can also add a one-line summary, such as the course name, semester, and a sentence about
               your goals for the class.
@@ -500,7 +528,7 @@
         <div class="portfolio-header">
           <div class="portfolio-title-group">
             <h2>Portfolio</h2>
-            <p>Assignments, projects, skills, and reflections organized by lesson.</p>
+            <p>Assignments, projects, skills, and reflective statements organized by lesson.</p>
           </div>
 
           <div class="filter-bar">
@@ -1092,7 +1120,7 @@
           <div class="lesson-item">
             <button class="lesson-header" type="button">
               <div>
-                <span>L12 – Societal Issues & Cybercrime</span><br />
+                <span>L12 – Societal Issues &amp; Cybercrime</span><br />
                 <small>Societal implications of IT and cybercrime assignment</small>
               </div>
               <div class="lesson-chevron" aria-hidden="true">▾</div>
@@ -1214,22 +1242,34 @@
           <div class="assignment-description">
             Brief description of what the assignment asked you to do and what you produced.
           </div>
+
+          <div class="assignment-media">
+            <figure>
+              <img src="PATH/TO/SCREENSHOT.png" alt="Screenshot or example of this assignment." />
+              <figcaption>Short caption explaining what the screenshot shows.</figcaption>
+            </figure>
+          </div>
+
           <div class="tag-list">
             <span class="tag">HTML</span>
             <span class="tag">Reflection</span>
             <span class="tag">Communication</span>
           </div>
+
           <div class="assignment-subheading">Reflection</div>
           <p>
             2–4 sentences reflecting on what you learned, challenges you faced, and how this connects to your goals.
           </p>
-          <div class="assignment-subheading">Feedback &amp; Revisions</div>
+
+          <div class="assignment-subheading">Peer Feedback &amp; Revisions</div>
           <ul class="small">
-            <li>Feedback: Summary of peer or instructor feedback.</li>
+            <li>Feedback: Summary of peer and/or instructor feedback.</li>
             <li>Revision: Explanation of how you changed the work in response.</li>
           </ul>
+
           <div class="assignment-links">
             <a href="#" class="pill-link" target="_blank" rel="noopener noreferrer">View Artifact</a>
+            <a href="#" class="pill-link" target="_blank" rel="noopener noreferrer">View Discussion Post Text</a>
             <a href="#" class="pill-link" target="_blank" rel="noopener noreferrer">View Rubric / Instructions</a>
           </div>
         </div>
@@ -1302,6 +1342,20 @@
             </a>
           </p>
         </div>
+      </section>
+
+      <!-- CONCLUSION -->
+      <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p>
+          This section will summarize how your portfolio showcases your achievements and learning journey in
+          Intro to Information Science and Technology.
+        </p>
+        <ul>
+          <li>Reflect on your overall progress and major takeaways from the course.</li>
+          <li>Explain how this portfolio can be shared with employers, schools, or your personal network.</li>
+          <li>Describe what you learned about presenting your work digitally and organizing information clearly.</li>
+        </ul>
       </section>
     </main>
 
