@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Learning Portfolio</title>
+    <title>My IST 110 Learning Portfolio</title>
     <style>
       * {
         box-sizing: border-box;
@@ -541,6 +541,7 @@
             <button class="filter-button" data-filter="portfolio">Portfolio</button>
             <button class="filter-button" data-filter="quiz">Quizzes</button>
             <button class="filter-button" data-filter="reading">Reading Checks</button>
+            <button class="filter-button" data-filter="resource">Resources</button>
           </div>
         </div>
 
@@ -558,6 +559,7 @@
             <button class="tab-button" data-target="tab-portfolio">Portfolio</button>
             <button class="tab-button" data-target="tab-quizzes">Quizzes</button>
             <button class="tab-button" data-target="tab-reading">Reading Checks</button>
+            <button class="tab-button" data-target="tab-resources">Resources</button>
           </div>
 
           <div class="tab-content">
@@ -595,6 +597,11 @@
               <strong>Reading Checks (zyBook)</strong>
               <p>Auto-graded reading check activities integrated with zyBook content.</p>
             </div>
+
+            <div id="tab-resources" class="tab-panel">
+              <strong>Resources &amp; Pages</strong>
+              <p>Supporting materials such as Canvas pages, videos, and external links.</p>
+            </div>
           </div>
         </div>
 
@@ -623,6 +630,11 @@
                     <!-- Add <div class="assignment-card" data-type="individual">...</div> elements here -->
                   </div>
                 </div>
+                <div class="group-column" data-group="ungraded">
+                  <h3>Ungraded / Activities</h3>
+                  <p>Exit tickets and completion-only tasks (e.g., Exit ticket 00).</p>
+                  <div class="assignment-list"></div>
+                </div>
                 <div class="group-column" data-group="portfolio">
                   <h3>Portfolio / Planning</h3>
                   <p>Milestones or plans related to your learning portfolio.</p>
@@ -648,7 +660,12 @@
               <div class="lesson-groups">
                 <div class="group-column" data-group="individual">
                   <h3>Individual Assignments</h3>
-                  <p>Write-ups, small tasks, and exit tickets.</p>
+                  <p>Write-ups, small tasks, and core graded work.</p>
+                  <div class="assignment-list"></div>
+                </div>
+                <div class="group-column" data-group="ungraded">
+                  <h3>Ungraded / Activities</h3>
+                  <p>Activities and exit tickets (e.g., L01 Activities, L01 Exit ticket).</p>
                   <div class="assignment-list"></div>
                 </div>
                 <div class="group-column" data-group="discussion">
@@ -668,7 +685,7 @@
                 </div>
                 <div class="group-column" data-group="project">
                   <h3>Projects</h3>
-                  <p>Larger artifacts tied to Lesson 01 (if any).</p>
+                  <p>Larger artifacts tied to Lesson 01 (e.g., Virtual Information Treasure Hunt).</p>
                   <div class="assignment-list"></div>
                 </div>
               </div>
@@ -1230,7 +1247,8 @@
 
         <!-- Assignment card template (commented) -->
         <!--
-        Example assignment card structure (copy/paste into an appropriate .assignment-list and fill in):
+        Example assignment card structure (copy/paste into an appropriate .assignment-list and fill in).
+        Valid data-type values: individual, discussion, project, portfolio, quiz, reading, ungraded, resource.
         <div class="assignment-card" data-type="individual">
           <h4>Assignment Title Here</h4>
           <div class="assignment-meta">
@@ -1271,6 +1289,33 @@
             <a href="#" class="pill-link" target="_blank" rel="noopener noreferrer">View Artifact</a>
             <a href="#" class="pill-link" target="_blank" rel="noopener noreferrer">View Discussion Post Text</a>
             <a href="#" class="pill-link" target="_blank" rel="noopener noreferrer">View Rubric / Instructions</a>
+          </div>
+        </div>
+        -->
+
+        <!--
+        Optional group-column for Canvas Pages / External URLs (Resources):
+        Place this inside a lesson's .lesson-groups if that lesson has Pages or external links.
+
+        <div class="group-column" data-group="resources">
+          <h3>Resources &amp; Pages</h3>
+          <p>Canvas pages, videos, and external links supporting this lesson.</p>
+          <div class="assignment-list">
+            <!-- Example when populating:
+            <div class="assignment-card" data-type="resource">
+              <h4>Chapter X – Terms and Concepts</h4>
+              <div class="assignment-meta">
+                <span>Type: Resource</span>
+                <span>Lesson: L0X</span>
+              </div>
+              <div class="assignment-description">
+                Brief note on how this page or link supported your learning.
+              </div>
+              <div class="assignment-links">
+                <a href="#" class="pill-link" target="_blank" rel="noopener noreferrer">Open Resource</a>
+              </div>
+            </div>
+            -->
           </div>
         </div>
         -->
