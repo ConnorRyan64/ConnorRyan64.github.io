@@ -1,24 +1,1242 @@
-<!-- level1.html -->
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Level 1</title>
-  </head>
-  <body>
-    <header>
-      <h1>Level 1</h1>
-      <p><a href="index.html" target="_top">Back to Home</a></p>
-      <hr />
-    </header>
+<!doctype html> <html lang="en"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <title>LEVEL 1 — Elden Ring Checklist</title> <style> :root { --maxw: 980px; --pad: 16px; --radius: 12px; 
+--border: 1px solid rgba(0,0,0,.12); } body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.45; } header, nav, main { max-width: var(--maxw);
+margin: 0 auto; padding: var(--pad); } header { padding-top: 22px; padding-bottom: 10px; } h1 { margin: 0 0 8px 0; font-size: 1.65rem; } .legend { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 0.95rem; opacity: 0.9; } 
+.legend .pill { border: var(--border); border-radius: 999px; padding: 4px 10px; } button.reset { border: var(--border); background: transparent; border-radius: 10px; padding: 6px 10px; cursor: pointer; } button.reset:hover { background: rgba(0,0,0,.04); }
 
-    <section><h2>1. Limgrave West</h2><ul></ul></section>
-    <section><h2>2. Roundtable Hold</h2><ul></ul></section>
-    <section><h2>3. Limgrave East/Northeast (avoid Sellen)</h2><ul></ul></section>
-    <section><h2>4. Mistwood &amp; Fort Haight</h2><ul></ul></section>
-    <section><h2>5. Stormhill</h2><ul></ul></section>
-    <section><h2>6. Weeping Peninsula</h2><ul></ul></section>
-    <section><h2>7. Stormveil Castle</h2><ul></ul></section>
-  </body>
+nav { padding-top: 0; }
+nav h2 { margin: 10px 0 8px 0; font-size: 1.1rem; }
+nav ul { margin: 0; padding-left: 18px; }
+nav li { margin: 4px 0; }
+
+main { padding-top: 6px; padding-bottom: 28px; }
+section.area { margin: 22px 0 30px 0; }
+section.area > h2 { margin: 0 0 10px 0; font-size: 1.35rem; }
+
+section.cluster { border: var(--border); border-radius: var(--radius); padding: 12px; margin: 12px 0; }
+section.cluster > h3 { margin: 0 0 10px 0; font-size: 1.05rem; letter-spacing: 0.2px; }
+.none { margin: 0; opacity: 0.85; font-style: italic; }
+
+article.entry { border: var(--border); border-radius: var(--radius); padding: 12px; margin: 10px 0; background: rgba(0,0,0,.015); }
+article.entry h4 { margin: 0 0 8px 0; font-size: 1.02rem; }
+.microsteps-title { margin: 8px 0 8px 0; font-weight: 600; }
+.entry-body p { margin: 6px 0; }
+
+ol.checklist { margin: 0; padding-left: 22px; }
+ol.checklist li { margin: 6px 0; }
+ol.checklist input[type="checkbox"] { transform: translateY(1px); margin-right: 8px; }
+ol.checklist label { cursor: pointer; }
+
+details { margin-top: 10px; border: var(--border); border-radius: 10px; padding: 8px 10px; background: rgba(255,255,255,.75); }
+details > summary { cursor: pointer; font-weight: 650; }
+details p { margin: 8px 0 0 0; }
+
+details.warning { background: rgba(255, 230, 230, 0.35); }
+details.verify { background: rgba(230, 240, 255, 0.35); }
+details.required { background: rgba(240, 235, 255, 0.35); }
+
+.meta { margin-top: 10px; font-size: 0.95rem; opacity: 0.9; display: flex; gap: 10px; flex-wrap: wrap; }
+.meta .tag { border: var(--border); border-radius: 999px; padding: 2px 10px; background: rgba(255,255,255,.6); }
+
+.sources-block { margin-top: 12px; border: var(--border); border-radius: var(--radius); padding: 12px; }
+.sources-block h3 { margin: 0 0 8px 0; font-size: 1.02rem; }
+.sources-block ul { margin: 0; padding-left: 18px; }
+.sources-block li { margin: 4px 0; }
+
+a { color: inherit; }
+
+</style> 
+</head> 
+  <body> 
+    <header> 
+      <h1>LEVEL 1</h1>
+      <div class="legend">
+        <span class="pill">Checkboxes save in this browser (localStorage) when enabled.</span>
+        <span class="pill">If JavaScript is disabled, checkboxes are static.</span> 
+<button class="reset" type="button" id="resetLevel">Reset this level</button> 
+</div> 
+ </header>
+ <nav aria-label="Table of Contents">
+   <h2>Table of Contents</h2> 
+   <ul> 
+    <li><a href="#limgrave-west">Limgrave West</a></li> 
+    <li><a href="#roundtable-hold">Roundtable Hold</a></li> 
+    <li><a href="#limgrave-east-northeast-avoid-sellen">Limgrave East/Northeast (avoid Sellen)</a></li>
+    <li><a href="#mistwood-fort-haight">Mistwood &amp; Fort Haight</a></li> 
+    <li><a href="#stormhill">Stormhill</a></li>
+    <li><a href="#weeping-peninsula">Weeping Peninsula</a></li> 
+    <li><a href="#stormveil-castle">Stormveil Castle</a></li> 
+  </ul> 
+  </nav> 
+  <main>
+    <section class="area" id="limgrave-west">
+      <h2>Limgrave West</h2>
+  <section class="cluster" aria-label="Cluster A">
+    <h3>Cluster A — QUEST ADVANCEMENTS</h3>
+
+    <article class="entry">
+      <h4>White Mask Varré: Start</h4>
+      <p class="microsteps-title">Microsteps (strict order, checklist style):</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="1" data-step="1">
+          <input type="checkbox" id="L1-A1-CA-E1-S1" />
+          <label for="L1-A1-CA-E1-S1">Fast travel to The First Step Site of Grace.</label>
+        </li>
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="1" data-step="2">
+          <input type="checkbox" id="L1-A1-CA-E1-S2" />
+          <label for="L1-A1-CA-E1-S2">Speak to White Mask Varré and exhaust dialogue until it repeats.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Varré’s questline is active (later dialogue updates after Roundtable / Great Rune).</p>
+      </details>
+
+      <details class="warning">
+        <summary>Lockout Warning</summary>
+        <p>Killing Varré ends his questline.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Melina: Start</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="2" data-step="1">
+          <input type="checkbox" id="L1-A1-CA-E2-S1" />
+          <label for="L1-A1-CA-E2-S1">Rest at Gatefront Site of Grace (Gatefront Ruins) after activating it.</label>
+        </li>
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="2" data-step="2">
+          <input type="checkbox" id="L1-A1-CA-E2-S2" />
+          <label for="L1-A1-CA-E2-S2">When prompted, choose the option to accept the accord.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>You gain the ability to level up and receive Torrent (Spectral Steed Whistle).</p>
+      </details>
+
+      <details class="warning">
+        <summary>Lockout Warning</summary>
+        <p>If you refuse, you can re-accept later by resting again, but your sequence expects accepting now.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Ranni (as “Renna”): Start</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="3" data-step="1">
+          <input type="checkbox" id="L1-A1-CA-E3-S1" />
+          <label for="L1-A1-CA-E3-S1">Fast travel to Church of Elleh Site of Grace.</label>
+        </li>
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="3" data-step="2">
+          <input type="checkbox" id="L1-A1-CA-E3-S2" />
+          <label for="L1-A1-CA-E3-S2">If she does not appear, Pass time to Night at the grace, then stand up.</label>
+        </li>
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="3" data-step="3">
+          <input type="checkbox" id="L1-A1-CA-E3-S3" />
+          <label for="L1-A1-CA-E3-S3">Speak to Renna and exhaust dialogue until it completes.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Ranni’s questline is “touched” early; you receive the Spirit Calling Bell + Lone Wolf Ashes from this encounter.</p>
+      </details>
+
+      <details class="verify">
+        <summary>VERIFY</summary>
+        <p>If you miss this encounter, the bell can be obtained later via Roundtable (alternate path); your checklist assumes you get it here.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Boc the Seamster: Start → Advance</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="4" data-step="1">
+          <input type="checkbox" id="L1-A1-CA-E4-S1" />
+          <label for="L1-A1-CA-E4-S1">From Agheel Lake North area, locate the “talking tree” (Boc disguised as a small tree).</label>
+        </li>
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="4" data-step="2">
+          <input type="checkbox" id="L1-A1-CA-E4-S2" />
+          <label for="L1-A1-CA-E4-S2">Hit/roll into the tree to break the disguise.</label>
+        </li>
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="4" data-step="3">
+          <input type="checkbox" id="L1-A1-CA-E4-S3" />
+          <label for="L1-A1-CA-E4-S3">Speak to Boc and exhaust dialogue.</label>
+        </li>
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="4" data-step="4">
+          <input type="checkbox" id="L1-A1-CA-E4-S4" />
+          <label for="L1-A1-CA-E4-S4">Go to Coastal Cave (Boc appears at/near the entrance once you’ve met him).</label>
+        </li>
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="4" data-step="5">
+          <input type="checkbox" id="L1-A1-CA-E4-S5" />
+          <label for="L1-A1-CA-E4-S5">Clear Coastal Cave enough to obtain Sewing Needle (required to advance Boc).</label>
+        </li>
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="4" data-step="6">
+          <input type="checkbox" id="L1-A1-CA-E4-S6" />
+          <label for="L1-A1-CA-E4-S6">Return to Boc at/near Coastal Cave and give him the Sewing Needle when prompted.</label>
+        </li>
+        <li data-level="1" data-area="1" data-cluster="A" data-entry="4" data-step="7">
+          <input type="checkbox" id="L1-A1-CA-E4-S7" />
+          <label for="L1-A1-CA-E4-S7">Rest at the Site of Grace to reload the area if Boc’s dialogue/state doesn’t update immediately.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Boc advances (returns to tailoring services / progresses to his next relocation state).</p>
+      </details>
+
+      <details class="warning">
+        <summary>Lockout Warning</summary>
+        <p>If you never free Boc from the tree, he won’t reliably appear for the needle hand-in.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="cluster" aria-label="Cluster B">
+    <h3>Cluster B — QUEST-CRITICAL ITEMS / NOTES</h3>
+
+    <article class="entry">
+      <h4>Note: Flask of Wondrous Physick</h4>
+      <div class="entry-body">
+        <p>Speak to Merchant Kalé at Church of Elleh.</p>
+        <p>Purchase Note: Flask of Wondrous Physick from his shop menu.</p>
+      </div>
+
+      <details>
+        <summary>Why it matters</summary>
+        <p>It explicitly points you toward the Physick acquisition route (your guide tracks the note as the intended “logic prompt”).</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Note: Waypoint Ruins</h4>
+      <div class="entry-body">
+        <p>From Merchant Kalé at Church of Elleh, purchase Note: Waypoint Ruins.</p>
+      </div>
+
+      <details>
+        <summary>Why it matters</summary>
+        <p>It points to Waypoint Ruins/Sellen-related progression, which your LEVEL 1 explicitly delays/avoids.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="cluster" aria-label="Cluster C">
+    <h3>Cluster C — OTHER IMPORTANT INFO</h3>
+    <p class="none">(none)</p>
+  </section>
+
+  <section class="sources-block" aria-label="Sources">
+    <h3>Sources:</h3>
+    <ul>
+      <li>Elden Ring Wiki</li>
+      <li>+2</li>
+      <li>Elden Ring Wiki</li>
+      <li>+2</li>
+    </ul>
+  </section>
+</section>
+
+<section class="area" id="roundtable-hold">
+  <h2>Roundtable Hold</h2>
+
+  <section class="cluster" aria-label="Cluster A">
+    <h3>Cluster A — QUEST ADVANCEMENTS</h3>
+
+    <article class="entry">
+      <h4>Roundtable Hold access: Required entry trigger for this Step</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="1" data-step="1">
+          <input type="checkbox" id="L1-A2-CA-E1-S1" />
+          <label for="L1-A2-CA-E1-S1">Trigger the Roundtable invitation by meeting Melina’s conditions, then accept travel to Roundtable Hold when offered.</label>
+        </li>
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="1" data-step="2">
+          <input type="checkbox" id="L1-A2-CA-E1-S2" />
+          <label for="L1-A2-CA-E1-S2">If the invitation does not trigger yet, VERIFY: some sources state it triggers after activating certain overland graces / early progression rather than immediately on your first Limgrave rests.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>You can fast travel to Roundtable Hold thereafter.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Gideon Ofnir: Start</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="2" data-step="1">
+          <input type="checkbox" id="L1-A2-CA-E2-S1" />
+          <label for="L1-A2-CA-E2-S1">In Roundtable Hold, enter Gideon’s study (library/office area).</label>
+        </li>
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="2" data-step="2">
+          <input type="checkbox" id="L1-A2-CA-E2-S2" />
+          <label for="L1-A2-CA-E2-S2">Speak to Gideon Ofnir and exhaust dialogue until it repeats.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Gideon’s “Shardbearer intel” quest state is initialized.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Diallos: Start</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="3" data-step="1">
+          <input type="checkbox" id="L1-A2-CA-E3-S1" />
+          <label for="L1-A2-CA-E3-S1">Speak to Diallos in the main Roundtable area.</label>
+        </li>
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="3" data-step="2">
+          <input type="checkbox" id="L1-A2-CA-E3-S2" />
+          <label for="L1-A2-CA-E3-S2">Exhaust dialogue until it repeats.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Diallos’s questline is initialized.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Brother Corhyn: Start</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="4" data-step="1">
+          <input type="checkbox" id="L1-A2-CA-E4-S1" />
+          <label for="L1-A2-CA-E4-S1">Speak to Brother Corhyn near the main table.</label>
+        </li>
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="4" data-step="2">
+          <input type="checkbox" id="L1-A2-CA-E4-S2" />
+          <label for="L1-A2-CA-E4-S2">Exhaust dialogue until it repeats (answer any “guidance of grace” prompt if it appears).</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Corhyn is initialized as an incantation teacher / questline begins.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Fia: Start</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="5" data-step="1">
+          <input type="checkbox" id="L1-A2-CA-E5-S1" />
+          <label for="L1-A2-CA-E5-S1">Speak to Fia.</label>
+        </li>
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="5" data-step="2">
+          <input type="checkbox" id="L1-A2-CA-E5-S2" />
+          <label for="L1-A2-CA-E5-S2">Choose “Hold” (hug) to receive her initial quest-state interaction.</label>
+        </li>
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="5" data-step="3">
+          <input type="checkbox" id="L1-A2-CA-E5-S3" />
+          <label for="L1-A2-CA-E5-S3">Exhaust dialogue options available in her menu until they repeat.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Fia’s questline is initialized; you receive her initial boon item from the hug interaction.</p>
+      </details>
+
+      <details class="warning">
+        <summary>Lockout Warning</summary>
+        <p>None for starting; later states depend on progressing main story/other NPCs.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Meet Ensha: Meet</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="6" data-step="1">
+          <input type="checkbox" id="L1-A2-CA-E6-S1" />
+          <label for="L1-A2-CA-E6-S1">Approach Ensha (silent NPC leaning near Gideon’s area) and attempt to speak.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>“Met Ensha” state is satisfied for your checklist.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Hewg: Meet</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="7" data-step="1">
+          <input type="checkbox" id="L1-A2-CA-E7-S1" />
+          <label for="L1-A2-CA-E7-S1">Go to the smithing area and speak to Smithing Master Hewg.</label>
+        </li>
+        <li data-level="1" data-area="2" data-cluster="A" data-entry="7" data-step="2">
+          <input type="checkbox" id="L1-A2-CA-E7-S2" />
+          <label for="L1-A2-CA-E7-S2">Exhaust dialogue until it repeats.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Hewg is unlocked as smith / dialogue baseline set.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="cluster" aria-label="Cluster B">
+    <h3>Cluster B — QUEST-CRITICAL ITEMS / NOTES</h3>
+    <p class="none">(none)</p>
+  </section>
+
+  <section class="cluster" aria-label="Cluster C">
+    <h3>Cluster C — OTHER IMPORTANT INFO</h3>
+    <p class="none">(none)</p>
+  </section>
+
+  <section class="sources-block" aria-label="Sources">
+    <h3>Sources:</h3>
+    <ul>
+      <li>Elden Ring Wiki</li>
+      <li>+2</li>
+      <li>Elden Ring Wiki</li>
+      <li>+2</li>
+    </ul>
+  </section>
+</section>
+
+<section class="area" id="limgrave-east-northeast-avoid-sellen">
+  <h2>Limgrave East/Northeast (avoid Sellen)</h2>
+
+  <section class="cluster" aria-label="Cluster A">
+    <h3>Cluster A — QUEST ADVANCEMENTS</h3>
+
+    <article class="entry">
+      <h4>Kenneth Haight: Start</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="3" data-cluster="A" data-entry="1" data-step="1">
+          <input type="checkbox" id="L1-A3-CA-E1-S1" />
+          <label for="L1-A3-CA-E1-S1">Find Kenneth Haight at his initial Limgrave location (north/east Limgrave region).</label>
+        </li>
+        <li data-level="1" data-area="3" data-cluster="A" data-entry="1" data-step="2">
+          <input type="checkbox" id="L1-A3-CA-E1-S2" />
+          <label for="L1-A3-CA-E1-S2">Speak to him and exhaust dialogue until he asks you to reclaim Fort Haight.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Haight quest is active with the “clear Fort Haight” objective.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>D, Hunter of the Dead: Start → Advance</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="3" data-cluster="A" data-entry="2" data-step="1">
+          <input type="checkbox" id="L1-A3-CA-E2-S1" />
+          <label for="L1-A3-CA-E2-S1">Find D at his initial Limgrave location (near the Summonwater Village approach).</label>
+        </li>
+        <li data-level="1" data-area="3" data-cluster="A" data-entry="2" data-step="2">
+          <input type="checkbox" id="L1-A3-CA-E2-S2" />
+          <label for="L1-A3-CA-E2-S2">Speak to D and exhaust dialogue to initialize his Deathroot/undead-hunting thread.</label>
+        </li>
+        <li data-level="1" data-area="3" data-cluster="A" data-entry="2" data-step="3">
+          <input type="checkbox" id="L1-A3-CA-E2-S3" />
+          <label for="L1-A3-CA-E2-S3">Go to Summonwater Village and defeat the local Tibia Mariner to obtain Deathroot.</label>
+        </li>
+        <li data-level="1" data-area="3" data-cluster="A" data-entry="2" data-step="4">
+          <input type="checkbox" id="L1-A3-CA-E2-S4" />
+          <label for="L1-A3-CA-E2-S4">Rest at a Site of Grace to reload, then return to D (or speak to him at his next available location if he has moved) and exhaust dialogue.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>D acknowledges Deathroot progression and points you toward the Beast Clergyman path.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Beast Clergyman (Gurranq): Start</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="3" data-cluster="A" data-entry="3" data-step="1">
+          <input type="checkbox" id="L1-A3-CA-E3-S1" />
+          <label for="L1-A3-CA-E3-S1">Travel to Bestial Sanctum (reach it via normal travel or the sending gate method if using it).</label>
+        </li>
+        <li data-level="1" data-area="3" data-cluster="A" data-entry="3" data-step="2">
+          <input type="checkbox" id="L1-A3-CA-E3-S2" />
+          <label for="L1-A3-CA-E3-S2">Speak to Gurranq, Beast Clergyman.</label>
+        </li>
+        <li data-level="1" data-area="3" data-cluster="A" data-entry="3" data-step="3">
+          <input type="checkbox" id="L1-A3-CA-E3-S3" />
+          <label for="L1-A3-CA-E3-S3">Choose the option to give Deathroot.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Beast Clergyman questline is started (reward granted for first Deathroot).</p>
+      </details>
+
+      <details class="required">
+        <summary>REQUIRED ADDITION</summary>
+        <p>You must possess at least 1 Deathroot before Gurranq’s quest state can begin.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="cluster" aria-label="Cluster B">
+    <h3>Cluster B — QUEST-CRITICAL ITEMS / NOTES</h3>
+    <p class="none">(none)</p>
+  </section>
+
+  <section class="cluster" aria-label="Cluster C">
+    <h3>Cluster C — OTHER IMPORTANT INFO</h3>
+
+    <article class="entry">
+      <h4>AVOID SELLEN: Do not enter Waypoint Ruins’ basement / do not speak to Sellen yet (even if your Note: Waypoint Ruins points you there).</h4>
+    </article>
+  </section>
+
+  <section class="sources-block" aria-label="Sources">
+    <h3>Sources:</h3>
+    <ul>
+      <li>Elden Ring Wiki</li>
+      <li>+2</li>
+      <li>Elden Ring Wiki</li>
+      <li>+2</li>
+    </ul>
+  </section>
+</section>
+
+<section class="area" id="mistwood-fort-haight">
+  <h2>Mistwood &amp; Fort Haight</h2>
+
+  <section class="cluster" aria-label="Cluster A">
+    <h3>Cluster A — QUEST ADVANCEMENTS</h3>
+
+    <article class="entry">
+      <h4>Kenneth Haight: Advance</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="4" data-cluster="A" data-entry="1" data-step="1">
+          <input type="checkbox" id="L1-A4-CA-E1-S1" />
+          <label for="L1-A4-CA-E1-S1">Go to Fort Haight.</label>
+        </li>
+        <li data-level="1" data-area="4" data-cluster="A" data-entry="1" data-step="2">
+          <input type="checkbox" id="L1-A4-CA-E1-S2" />
+          <label for="L1-A4-CA-E1-S2">Clear the fort enough to satisfy the “reclaim” condition (defeat the fort’s hostile leadership/commander).</label>
+        </li>
+        <li data-level="1" data-area="4" data-cluster="A" data-entry="1" data-step="3">
+          <input type="checkbox" id="L1-A4-CA-E1-S3" />
+          <label for="L1-A4-CA-E1-S3">Rest at a Site of Grace (reload) if needed.</label>
+        </li>
+        <li data-level="1" data-area="4" data-cluster="A" data-entry="1" data-step="4">
+          <input type="checkbox" id="L1-A4-CA-E1-S4" />
+          <label for="L1-A4-CA-E1-S4">Return to Kenneth Haight at his original spot and exhaust dialogue until he acknowledges Fort Haight is reclaimed.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Haight advances and promises further reward/knighthood follow-up.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Blaidd: Start</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="4" data-cluster="A" data-entry="2" data-step="1">
+          <input type="checkbox" id="L1-A4-CA-E2-S1" />
+          <label for="L1-A4-CA-E2-S1">Go to Mistwood Ruins and listen for Blaidd’s howling cue.</label>
+        </li>
+        <li data-level="1" data-area="4" data-cluster="A" data-entry="2" data-step="2">
+          <input type="checkbox" id="L1-A4-CA-E2-S2" />
+          <label for="L1-A4-CA-E2-S2">Return to Merchant Kalé at Church of Elleh and ask about the Mistwood howling to receive Finger Snap (see Cluster B if you haven’t yet).</label>
+        </li>
+        <li data-level="1" data-area="4" data-cluster="A" data-entry="2" data-step="3">
+          <input type="checkbox" id="L1-A4-CA-E2-S3" />
+          <label for="L1-A4-CA-E2-S3">Return to Mistwood Ruins.</label>
+        </li>
+        <li data-level="1" data-area="4" data-cluster="A" data-entry="2" data-step="4">
+          <input type="checkbox" id="L1-A4-CA-E2-S4" />
+          <label for="L1-A4-CA-E2-S4">Use the Finger Snap gesture to call Blaidd down.</label>
+        </li>
+        <li data-level="1" data-area="4" data-cluster="A" data-entry="2" data-step="5">
+          <input type="checkbox" id="L1-A4-CA-E2-S5" />
+          <label for="L1-A4-CA-E2-S5">Speak to Blaidd and exhaust dialogue until he gives his initial objective.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Blaidd questline is started; he provides his first lead.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="cluster" aria-label="Cluster B">
+    <h3>Cluster B — QUEST-CRITICAL ITEMS / NOTES</h3>
+
+    <article class="entry">
+      <h4>Finger Snap (gesture)</h4>
+      <div class="entry-body">
+        <p>Hear the howling at Mistwood Ruins (prereq to unlock Kalé’s related dialogue).</p>
+        <p>Speak to Merchant Kalé at Church of Elleh and select the howling dialogue to receive Finger Snap.</p>
+      </div>
+
+      <details>
+        <summary>Why it matters</summary>
+        <p>Required to summon Blaidd for your “Start Blaidd quest” step.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="cluster" aria-label="Cluster C">
+    <h3>Cluster C — OTHER IMPORTANT INFO</h3>
+    <p class="none">(none)</p>
+  </section>
+
+  <section class="sources-block" aria-label="Sources">
+    <h3>Sources:</h3>
+    <ul>
+      <li>Elden Ring Wiki</li>
+      <li>+2</li>
+      <li>Elden Ring Wiki</li>
+      <li>+2</li>
+    </ul>
+  </section>
+</section>
+
+<section class="area" id="stormhill">
+  <h2>Stormhill</h2>
+
+  <section class="cluster" aria-label="Cluster A">
+    <h3>Cluster A — QUEST ADVANCEMENTS</h3>
+
+    <article class="entry">
+      <h4>Roderika: Start</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="5" data-cluster="A" data-entry="1" data-step="1">
+          <input type="checkbox" id="L1-A5-CA-E1-S1" />
+          <label for="L1-A5-CA-E1-S1">Go to Stormhill Shack.</label>
+        </li>
+        <li data-level="1" data-area="5" data-cluster="A" data-entry="1" data-step="2">
+          <input type="checkbox" id="L1-A5-CA-E1-S2" />
+          <label for="L1-A5-CA-E1-S2">Speak to Roderika and exhaust dialogue until it repeats.</label>
+        </li>
+        <li data-level="1" data-area="5" data-cluster="A" data-entry="1" data-step="3">
+          <input type="checkbox" id="L1-A5-CA-E1-S3" />
+          <label for="L1-A5-CA-E1-S3">Rest at the Site of Grace if needed to see her full initial dialogue set.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Roderika’s questline is started (sets up her later Roundtable transition).</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Iron Fist Alexander: Start</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="5" data-cluster="A" data-entry="2" data-step="1">
+          <input type="checkbox" id="L1-A5-CA-E2-S1" />
+          <label for="L1-A5-CA-E2-S1">Find Alexander stuck in the ground in north Limgrave/Stormhill route area.</label>
+        </li>
+        <li data-level="1" data-area="5" data-cluster="A" data-entry="2" data-step="2">
+          <input type="checkbox" id="L1-A5-CA-E2-S2" />
+          <label for="L1-A5-CA-E2-S2">Speak to him.</label>
+        </li>
+        <li data-level="1" data-area="5" data-cluster="A" data-entry="2" data-step="3">
+          <input type="checkbox" id="L1-A5-CA-E2-S3" />
+          <label for="L1-A5-CA-E2-S3">Free him (hit him from behind until he pops out).</label>
+        </li>
+        <li data-level="1" data-area="5" data-cluster="A" data-entry="2" data-step="4">
+          <input type="checkbox" id="L1-A5-CA-E2-S4" />
+          <label for="L1-A5-CA-E2-S4">Speak again and exhaust dialogue until it repeats.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Alexander’s questline is started.</p>
+      </details>
+
+      <details class="verify">
+        <summary>VERIFY</summary>
+        <p>Some sources describe using an Oil Pot before hitting him, while others treat it as optional for this first stuck encounter.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="cluster" aria-label="Cluster B">
+    <h3>Cluster B — QUEST-CRITICAL ITEMS / NOTES</h3>
+
+    <article class="entry">
+      <h4>Note: Flame Chariots</h4>
+      <div class="entry-body">
+        <p>Find Nomadic Merchant North Limgrave (east of Saintsbridge).</p>
+        <p>Purchase Note: Flame Chariots.</p>
+      </div>
+
+      <details>
+        <summary>Why it matters</summary>
+        <p>Your checklist tracks this note as the intended “logic prompt” for the Flame Chariot interaction later.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="cluster" aria-label="Cluster C">
+    <h3>Cluster C — OTHER IMPORTANT INFO</h3>
+    <p class="none">(none)</p>
+  </section>
+
+  <section class="sources-block" aria-label="Sources">
+    <h3>Sources:</h3>
+    <ul>
+      <li>Elden Ring Wiki</li>
+      <li>+2</li>
+      <li>Elden Ring Wiki</li>
+      <li>+2</li>
+    </ul>
+  </section>
+</section>
+
+<section class="area" id="weeping-peninsula">
+  <h2>Weeping Peninsula</h2>
+
+  <section class="cluster" aria-label="Cluster A">
+    <h3>Cluster A — QUEST ADVANCEMENTS</h3>
+
+    <article class="entry">
+      <h4>Irina: Start → Finish</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="6" data-cluster="A" data-entry="1" data-step="1">
+          <input type="checkbox" id="L1-A6-CA-E1-S1" />
+          <label for="L1-A6-CA-E1-S1">Cross Bridge of Sacrifice into Weeping Peninsula approach.</label>
+        </li>
+        <li data-level="1" data-area="6" data-cluster="A" data-entry="1" data-step="2">
+          <input type="checkbox" id="L1-A6-CA-E1-S2" />
+          <label for="L1-A6-CA-E1-S2">Speak to Irina and accept her request.</label>
+        </li>
+        <li data-level="1" data-area="6" data-cluster="A" data-entry="1" data-step="3">
+          <input type="checkbox" id="L1-A6-CA-E1-S3" />
+          <label for="L1-A6-CA-E1-S3">Receive Irina’s Letter.</label>
+        </li>
+        <li data-level="1" data-area="6" data-cluster="A" data-entry="1" data-step="4">
+          <input type="checkbox" id="L1-A6-CA-E1-S4" />
+          <label for="L1-A6-CA-E1-S4">After later steps with Edgar + Castle Morne completion, return to Irina’s location.</label>
+        </li>
+        <li data-level="1" data-area="6" data-cluster="A" data-entry="1" data-step="5">
+          <input type="checkbox" id="L1-A6-CA-E1-S5" />
+          <label for="L1-A6-CA-E1-S5">Confirm Irina’s quest end-state at her spot (her death state is the “finish” for this quest thread).</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Irina quest is completed (sets up Edgar’s revenge continuation).</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Edgar: Start → Advance</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="6" data-cluster="A" data-entry="2" data-step="1">
+          <input type="checkbox" id="L1-A6-CA-E2-S1" />
+          <label for="L1-A6-CA-E2-S1">Go to Castle Morne.</label>
+        </li>
+        <li data-level="1" data-area="6" data-cluster="A" data-entry="2" data-step="2">
+          <input type="checkbox" id="L1-A6-CA-E2-S2" />
+          <label for="L1-A6-CA-E2-S2">Find Edgar at his initial position inside Castle Morne.</label>
+        </li>
+        <li data-level="1" data-area="6" data-cluster="A" data-entry="2" data-step="3">
+          <input type="checkbox" id="L1-A6-CA-E2-S3" />
+          <label for="L1-A6-CA-E2-S3">Speak to Edgar and choose the option to deliver Irina’s Letter.</label>
+        </li>
+        <li data-level="1" data-area="6" data-cluster="A" data-entry="2" data-step="4">
+          <input type="checkbox" id="L1-A6-CA-E2-S4" />
+          <label for="L1-A6-CA-E2-S4">Exhaust dialogue until it repeats.</label>
+        </li>
+        <li data-level="1" data-area="6" data-cluster="A" data-entry="2" data-step="5">
+          <input type="checkbox" id="L1-A6-CA-E2-S5" />
+          <label for="L1-A6-CA-E2-S5">Defeat Leonine Misbegotten (required to obtain the grafted blade for your step).</label>
+        </li>
+        <li data-level="1" data-area="6" data-cluster="A" data-entry="2" data-step="6">
+          <input type="checkbox" id="L1-A6-CA-E2-S6" />
+          <label for="L1-A6-CA-E2-S6">Return to Edgar and exhaust dialogue to advance his state.</label>
+        </li>
+        <li data-level="1" data-area="6" data-cluster="A" data-entry="2" data-step="7">
+          <input type="checkbox" id="L1-A6-CA-E2-S7" />
+          <label for="L1-A6-CA-E2-S7">Rest at a Site of Grace (reload), then return to Irina’s location.</label>
+        </li>
+        <li data-level="1" data-area="6" data-cluster="A" data-entry="2" data-step="8">
+          <input type="checkbox" id="L1-A6-CA-E2-S8" />
+          <label for="L1-A6-CA-E2-S8">Speak to Edgar at Irina’s body (if present) and exhaust dialogue.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Edgar advances into his revenge path (next invasion stage occurs later).</p>
+      </details>
+
+      <details class="required">
+        <summary>REQUIRED ADDITION</summary>
+        <p>Edgar’s “post-boss” movement requires you to have delivered the letter before resolving Castle Morne boss state in the intended path.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="cluster" aria-label="Cluster B">
+    <h3>Cluster B — QUEST-CRITICAL ITEMS / NOTES</h3>
+
+    <article class="entry">
+      <h4>Irina’s Letter</h4>
+      <div class="entry-body">
+        <p>Obtain from Irina at Bridge of Sacrifice approach after accepting her request.</p>
+        <p>Deliver to Edgar in Castle Morne when prompted.</p>
+      </div>
+
+      <details>
+        <summary>Why it matters</summary>
+        <p>Required for Edgar’s quest progression and your Irina/Edgar completion ordering.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Grafted Blade Greatsword (grafted blade)</h4>
+      <div class="entry-body">
+        <p>Defeat Leonine Misbegotten at Castle Morne to obtain Grafted Blade Greatsword.</p>
+      </div>
+
+      <details>
+        <summary>Why it matters</summary>
+        <p>Your step explicitly requires collecting it, and it is the gating event for Edgar’s post-boss dialogue/state.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="cluster" aria-label="Cluster C">
+    <h3>Cluster C — OTHER IMPORTANT INFO</h3>
+    <p class="none">(none)</p>
+  </section>
+
+  <section class="sources-block" aria-label="Sources">
+    <h3>Sources:</h3>
+    <ul>
+      <li>Elden Ring Wiki</li>
+      <li>+2</li>
+      <li>Elden Ring Wiki</li>
+      <li>+2</li>
+    </ul>
+  </section>
+</section>
+
+<section class="area" id="stormveil-castle">
+  <h2>Stormveil Castle</h2>
+
+  <section class="cluster" aria-label="Cluster A">
+    <h3>Cluster A — QUEST ADVANCEMENTS</h3>
+
+    <article class="entry">
+      <h4>Gatekeeper Gostoc: Start</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="1" data-step="1">
+          <input type="checkbox" id="L1-A7-CA-E1-S1" />
+          <label for="L1-A7-CA-E1-S1">Enter Stormveil Castle approach and find Gatekeeper Gostoc at the front-gate interaction point.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="1" data-step="2">
+          <input type="checkbox" id="L1-A7-CA-E1-S2" />
+          <label for="L1-A7-CA-E1-S2">Speak to Gostoc and exhaust dialogue until it repeats (choose the entry option you want; your sequence just requires starting his quest state).</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Gostoc is started; his later state change is tied to Godrick’s defeat.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Sorcerer Rogier: Start → Advance (bloodstain + letter)</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="2" data-step="1">
+          <input type="checkbox" id="L1-A7-CA-E2-S1" />
+          <label for="L1-A7-CA-E2-S1">Inside Stormveil, find Sorcerer Rogier at his first location and exhaust dialogue to start his quest state.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="2" data-step="2">
+          <input type="checkbox" id="L1-A7-CA-E2-S2" />
+          <label for="L1-A7-CA-E2-S2">Before killing Godrick, reach the area containing Rogier’s related bloodstain objective and interact with the bloodstain.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="2" data-step="3">
+          <input type="checkbox" id="L1-A7-CA-E2-S3" />
+          <label for="L1-A7-CA-E2-S3">After killing Godrick, return to Rogier (or his next location if he relocates) and exhaust dialogue to register the bloodstain progression.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="2" data-step="4">
+          <input type="checkbox" id="L1-A7-CA-E2-S4" />
+          <label for="L1-A7-CA-E2-S4">VERIFY (letter): Some sources treat Rogier’s early “next-step” as dialogue-only here; the key item Rogier’s Letter on Fextralife is associated with his later death state, not immediately after Godrick.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Rogier advances toward his next objective chain; your checklist records bloodstain progression + the “letter” milestone as specified.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Nepheli Loux: Start</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="3" data-step="1">
+          <input type="checkbox" id="L1-A7-CA-E3-S1" />
+          <label for="L1-A7-CA-E3-S1">Find Nepheli Loux inside Stormveil before Godrick.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="3" data-step="2">
+          <input type="checkbox" id="L1-A7-CA-E3-S2" />
+          <label for="L1-A7-CA-E3-S2">Speak to her and exhaust dialogue until it repeats.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Nepheli is started (enables her later Roundtable/Gideon linkage).</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">YouTube</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Roderika: Advance</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="4" data-step="1">
+          <input type="checkbox" id="L1-A7-CA-E4-S1" />
+          <label for="L1-A7-CA-E4-S1">Obtain Chrysalids’ Memento from Stormveil Castle.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="4" data-step="2">
+          <input type="checkbox" id="L1-A7-CA-E4-S2" />
+          <label for="L1-A7-CA-E4-S2">Return to Roderika (Stormhill Shack if she is still there) and give Chrysalids’ Memento when prompted.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="4" data-step="3">
+          <input type="checkbox" id="L1-A7-CA-E4-S3" />
+          <label for="L1-A7-CA-E4-S3">Fast travel to Roundtable Hold.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="4" data-step="4">
+          <input type="checkbox" id="L1-A7-CA-E4-S4" />
+          <label for="L1-A7-CA-E4-S4">Speak to Hewg about Roderika.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="4" data-step="5">
+          <input type="checkbox" id="L1-A7-CA-E4-S5" />
+          <label for="L1-A7-CA-E4-S5">Speak to Roderika.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="4" data-step="6">
+          <input type="checkbox" id="L1-A7-CA-E4-S6" />
+          <label for="L1-A7-CA-E4-S6">If needed, Rest at the Table of Lost Grace and repeat Hewg ↔ Roderika dialogue until her state updates.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Roderika advances into her Roundtable role progression.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>(after killing Godrick:) Gostoc: Finish</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="5" data-step="1">
+          <input type="checkbox" id="L1-A7-CA-E5-S1" />
+          <label for="L1-A7-CA-E5-S1">Defeat Godrick the Grafted.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="5" data-step="2">
+          <input type="checkbox" id="L1-A7-CA-E5-S2" />
+          <label for="L1-A7-CA-E5-S2">Rest at a Site of Grace to reload.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="5" data-step="3">
+          <input type="checkbox" id="L1-A7-CA-E5-S3" />
+          <label for="L1-A7-CA-E5-S3">Return to the Godrick arena/throne area and locate Gostoc.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="5" data-step="4">
+          <input type="checkbox" id="L1-A7-CA-E5-S4" />
+          <label for="L1-A7-CA-E5-S4">Speak to Gostoc to register his post-Godrick state.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Gostoc’s Stormveil segment is “finished” for your checklist; he becomes available in his post-boss role.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>(after killing Godrick:) Activate Great Rune → Advance Gideon</h4>
+      <p class="microsteps-title">Microsteps:</p>
+      <ol class="checklist">
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="6" data-step="1">
+          <input type="checkbox" id="L1-A7-CA-E6-S1" />
+          <label for="L1-A7-CA-E6-S1">Go to Divine Tower of Limgrave via Stormveil’s tower access route.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="6" data-step="2">
+          <input type="checkbox" id="L1-A7-CA-E6-S2" />
+          <label for="L1-A7-CA-E6-S2">Reach the top and restore Godrick’s Great Rune.</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="6" data-step="3">
+          <input type="checkbox" id="L1-A7-CA-E6-S3" />
+          <label for="L1-A7-CA-E6-S3">Rest at a Site of Grace and equip the Great Rune (as applicable in your build/plan).</label>
+        </li>
+        <li data-level="1" data-area="7" data-cluster="A" data-entry="6" data-step="4">
+          <input type="checkbox" id="L1-A7-CA-E6-S4" />
+          <label for="L1-A7-CA-E6-S4">Return to Roundtable Hold and speak to Gideon; exhaust dialogue for his post-Godrick acknowledgement.</label>
+        </li>
+      </ol>
+
+      <details>
+        <summary>Result</summary>
+        <p>Godrick’s Great Rune becomes usable; Gideon advances to his next intel state after your first Shardbearer completion.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="cluster" aria-label="Cluster B">
+    <h3>Cluster B — QUEST-CRITICAL ITEMS / NOTES</h3>
+
+    <article class="entry">
+      <h4>Margit’s Shackle</h4>
+      <div class="entry-body">
+        <p>Return to Patches (Murkwater Cave) after you spared him earlier and ensured he became a merchant.</p>
+        <p>Purchase Margit’s Shackle from Patches’ shop.</p>
+      </div>
+
+      <details>
+        <summary>Why it matters</summary>
+        <p>Your Stormveil step explicitly requires collecting it here for your planned Margit usage.</p>
+      </details>
+
+      <details class="verify">
+        <summary>VERIFY</summary>
+        <p>If Patches is dead, some sources indicate you can still buy it later via bell bearing at Roundtable; your run assumes the clean purchase from Patches.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+
+    <article class="entry">
+      <h4>Shabriri Grape</h4>
+      <div class="entry-body">
+        <p>In Stormveil Castle, pick up the Shabriri Grape at the Stormveil-specific drop (near the “grape” spirit context / throne-room vicinity as indicated by the wiki).</p>
+      </div>
+
+      <details>
+        <summary>Why it matters</summary>
+        <p>Your checklist tracks this pickup as a required key item acquisition at this point.</p>
+      </details>
+
+      <div class="meta" aria-label="Entry Sources">
+        <span class="tag">Elden Ring Wiki</span>
+        <span class="tag">+1</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="cluster" aria-label="Cluster C">
+    <h3>Cluster C — OTHER IMPORTANT INFO</h3>
+    <p class="none">(none)</p>
+  </section>
+
+  <section class="sources-block" aria-label="Sources">
+    <h3>Sources:</h3>
+    <p>Unknown reference: Sources entries not provided</p>
+  </section>
+</section>
+</main> 
+<script> (
+  function () { const level = "1"; const storageKey = "eldenring-checklist-level-" + level; 
+               function loadState() { try { const raw = localStorage.getItem(storageKey); return raw ? JSON.parse(raw) : {}; } catch { return {}; } } 
+               function saveState(state) { try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch { // ignore } } const state = loadState(); const checkboxes = Array.from(document.querySelectorAll('input[type="checkbox"][id^="L1-"]')); for (const cb of checkboxes) { if (state[cb.id] === true) cb.checked = true; cb.addEventListener("change", () => { state[cb.id] = cb.checked === true; saveState(state); }); } const resetBtn = document.getElementById("resetLevel"); if (resetBtn) { resetBtn.addEventListener("click", () => { try { localStorage.removeItem(storageKey); } catch { /* ignore */ } for (const cb of checkboxes) cb.checked = false; }); } })();
+</script> 
+  </body> 
 </html>
